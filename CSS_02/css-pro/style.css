@@ -1,0 +1,366 @@
+/*
+==================================================
+1. BASE STYLES, VARIABLES, & TYPOGRAPHY
+==================================================
+*/
+
+:root {
+    /* Define primary color variables for easy modification */
+    --color-primary: #007BFF;       /* Vibrant Blue (Accent) */
+    --color-success: #28A745;       /* Green (Definitions/Success) */
+    --color-text-main: #333333;     /* Dark Gray (Main Text) */
+    --color-text-code: #B85400;     /* Deep Orange (Code Text) */
+    --color-bg-light: #F8F9FA;      /* Light Gray (Code/Separators) */
+    --color-bg-section: #FDFDFE;    /* Near-white for the gradient end */
+    --font-family-base: 'Arial', sans-serif;
+    --font-family-code: 'Consolas', 'Courier New', monospace;
+}
+
+/* Adds a smooth scroll effect for all anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-base);
+    line-height: 1.6;
+    color: var(--color-text-main);
+    background-color: #FFFFFF;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 16px; /* Base font size */
+}
+
+/* New: Gradient Background for Sections */
+section {
+    /* Subtle gradient from near-white to a slightly darker near-white, applied top-to-bottom */
+    background: linear-gradient(to bottom, #FFFFFF 0%, var(--color-bg-section) 100%);
+    border: 1px solid #E9ECEF; /* Light border to frame the content */
+    border-radius: 8px;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+}
+
+p {
+    margin-bottom: 1.2rem;
+}
+
+header {    
+    
+    /* Optional: Styling for visual appeal */
+    background-color: #f7f7f7; /* Light background */
+    border-bottom: 3px solid #007BFF;
+    padding: 15px 20px 0; /* Add space below content, but keep nav height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================================================
+MEDIA QUERY: DESKTOP ONLY (Width 769px and up)
+==================================================
+*/
+@media (min-width: 769px) {
+    
+    header {
+        /* 1. APPLY STICKY POSITIONING */
+        /*position: sticky;*/
+        
+        /* 2. Tell it where to stick */
+        /*top: 0;*/
+        
+        /* 3. Ensure it stays above other content */
+        /*z-index: 1000;*/
+        
+        /* Optional: Re-add desktop-specific padding or adjustments if needed */
+    }
+}
+
+
+/*
+==================================================
+2. HEADING STYLES (H1 - H6)
+==================================================
+*/
+
+h1 {
+    font-size: 2.5em; /* ~40px */
+    color: var(--color-primary);
+    border-bottom: 4px solid var(--color-primary);
+    padding-bottom: 15px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2em; /* ~32px */
+    color: var(--color-primary);
+    border-bottom: 3px solid var(--color-primary);
+    padding-bottom: 10px;
+    margin-top: 20px; /* Reduced margin since section has padding */
+    margin-bottom: 25px;
+}
+
+h3 {
+    font-size: 1.5em; /* ~24px */
+    color: var(--color-primary);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-left: 5px solid #E9ECEF;
+    padding-left: 10px;
+}
+
+h4 {
+    font-size: 1.3em; /* ~21px */
+    color: var(--color-text-main);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 1.1em; /* ~18px */
+    color: var(--color-text-main);
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+h6 {
+    font-size: 1em; /* ~16px */
+    color: var(--color-text-main);
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-style: italic;
+}
+
+
+/*
+==================================================
+3. LINKS AND LISTS
+==================================================
+*/
+
+/* Links (Anchor Tags) */
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    /*color: #0056b3;
+    text-decoration: underline;*/
+}
+
+/* Lists */
+ul, ol {
+    margin-bottom: 20px;
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+ul li {
+    list-style-type: square;
+}
+
+ol li {
+    font-weight: bold;
+}
+
+ol li::marker {
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+
+/*
+==================================================
+4. DEFINITION LISTS (DL) - USED FOR PROPERTIES & ROLES
+==================================================
+*/
+
+dl {
+    margin-bottom: 25px;
+    border-left: 4px solid var(--color-bg-light); 
+    padding-left: 15px;
+}
+
+dt {
+    font-weight: bold;
+    color: var(--color-success);
+    margin-top: 10px;
+    padding-right: 5px;
+    display: inline-block;
+}
+
+dd {
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 10px;
+}
+
+
+/*
+==================================================
+5. CODE AND TABLES
+==================================================
+*/
+
+/* Inline Code */
+code {
+    background-color: #F0F0F0;
+    color: var(--color-text-code);
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: var(--font-family-code);
+    font-size: 0.95em;
+}
+
+/* Code Snippet Blocks */
+.code-block {
+    background-color: var(--color-bg-light); 
+    border: 1px solid #E9ECEF;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 20px 0;
+    overflow-x: auto;
+}
+
+.code-block pre code {
+    display: block;
+    white-space: pre-wrap;
+    background: none;
+    padding: 0;
+    border: none;
+    color: var(--color-text-code);
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95em;
+}
+
+th, td {
+    border: 1px solid #E9ECEF;
+    padding: 10px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: var(--color-bg-light); 
+}
+
+/*
+==================================================
+6. SECTION SEPARATORS
+==================================================
+*/
+
+hr {
+    border: 0;
+    border-top: 1px dashed #CED4DA;
+    margin: 40px 0;
+}
+
+/*
+==================================================
+7. NAVIGATION STYLING
+==================================================
+*/
+
+#mainNav {
+    /* 1. Use Flexbox to align buttons horizontally */
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; /* Center the entire nav block */
+    gap: 10px; /* Space between buttons */
+    
+    /* Overall look */    
+    padding: 15px 10px;
+    border-radius: 8px;    
+    margin-bottom: 30px; /* Space below the nav */
+}
+
+#mainNav a {
+    /* 2. Style anchor tags to look like buttons */
+    color: #FFFFFF; /* White text color */
+    text-decoration: none; /* Remove underline */
+    font-family: 'Arial', sans-serif;
+    font-size: 0.95em;
+    font-weight: 600;
+    
+    /* Button shape and padding */
+    padding: 10px 18px;
+    border-radius: 5px;
+    
+    /* Base color of the buttons */
+    background-color: #007BFF; /* Primary Blue */
+    
+    /* 3. Prepare for smooth hover effect */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#mainNav a:hover {
+    /* 4. Define the Hover Effect */
+    
+    /* Change background color to a darker shade */
+    background-color: #0056b3; 
+    
+    /* Slightly lift the button */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.6); 
+    
+    /* Small scale down/inward press effect */
+    transform: translateY(-2px); 
+}
+
+/*
+==================================================
+BACK TO TOP BUTTON STYLING (CSS ONLY)
+==================================================
+*/
+
+#backToTopBtn {
+    /* Positioning */
+    position: fixed; /* Locks the button to the screen */
+    bottom: 25px; /* Distance from the bottom */
+    right: 25px; /* Distance from the right */
+    
+    /* Styling */
+    background-color: #007BFF; /* Primary Blue */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Makes it a circle */
+    width: 45px;
+    height: 45px;
+    font-size: 1.5em;
+    line-height: 45px; /* Vertically centers the arrow */
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    
+    /* Smooth interaction */
+    transition: background-color 0.3s ease;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+#backToTopBtn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

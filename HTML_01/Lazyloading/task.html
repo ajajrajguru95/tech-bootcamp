@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background image lazy loading</title>
+</head>
+<body>
+    <h1>Background Image Lazy Loading - Task is to lazy load the background image</h1>
+
+      <div class="image-block" style="background-image: url('./img/1016-800x300.jpg');">
+            <div class="desc">Image 1</div>
+       </div>
+
+       <div style="height: 1000px;"></div>
+        <div class="image-block lazy-bg" data-bg="./img/1016-800x300.jpg">
+            <div class="desc">Image 2 (lazy loaded)</div>
+        </div>
+        <div class="image-block lazy-bg" data-bg="./img/1025-800x300.jpg">
+            <div class="desc">Image 3 (lazy loaded)</div>
+        </div>
+        <div class="image-block lazy-bg" data-bg="./img/1035-800x300.jpg">
+            <div class="desc">Image 4 (lazy loaded)</div>
+        </div>
+        <div class="image-block lazy-bg" data-bg="./img/1045-800x300.jpg">
+            <div class="desc">Image 5 (lazy loaded)</div>
+        </div>
+
+    
+</body>
+</html>

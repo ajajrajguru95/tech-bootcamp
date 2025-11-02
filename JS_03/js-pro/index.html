@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Core Concepts Demo</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <h1>JavaScript Concepts</h1>
+    
+    <div id="output-log">
+        <h2>Output:</h2>
+        <pre id="console-output"></pre>
+    </div>
+    
+    <hr>
+
+    <section id="topic-1">
+        <h2>1. Introduction</h2>
+        <p>JavaScript is a client-side scripting language used to make web pages interactive. It can manipulate content, respond to user actions, and communicate with servers.</p>
+        <p>Example Code: <code>console.log("Hello JavaScript");</code></p>
+    </section>
+
+    <section id="topic-2">
+        <h2>2. Variables & Constants</h2>
+        <p><strong>var:</strong> Function-scoped, can be re-declared.</p>
+        <p><strong>let:</strong> Block-scoped, safer to use.</p>
+        <p><strong>const:</strong> Block-scoped constant, cannot be reassigned.</p>
+        <p id="var-const-demo">Demo Variables: var $x=10$, let $y=20$, const $PI=3.14$</p>
+        <div id="var_print"></div>
+    </section>
+
+    <section id="topic-3">
+        <h2>3. Data Types</h2>
+        <p>JavaScript has <strong>Primitive</strong> (string, number, boolean, null, undefined, symbol, bigint) and <strong>Reference</strong> (object, array, function) types.</p>
+        <p id="data-type-demo">Demo: Check console/output log for type examples.</p>
+    </section>
+    
+    <section id="topic-4">
+        <h2>4. Operators</h2>
+        [cite_start]<p>Includes Arithmetic $(+, -)$, Assignment $(=, +=)$, Comparison $(==, ===)$, Logical $(\&\&, ||)$, and Ternary $(?:)$[cite: 36, 38, 39, 40, 41].</p>
+        <p id="operators-demo">Demo: Check console/output log for operator results.</p>
+    </section>
+
+    <section id="topic-5">
+        <h2>5. Control Flow</h2>
+        <p><strong>if-else:</strong> Executes code based on a condition.</p>
+        <p><strong>switch:</strong> Handles multiple possible values for a variable.</p>
+        <p id="control-flow-demo">Demo: If-else and switch execution for $num=2$ will be logged.</p>
+    </section>
+    
+    <section id="topic-6">
+        <h2>6. Loops</h2>
+        <p>Loops repeat code until a condition is met[cite: 63]. Types include <code>for</code> (counted), <code>while</code> (checks before), <code>do...while</code> (executes once), <code>for...of</code> (array values), and <code>for...in</code> (object keys)[cite: 65, 66, 68, 69, 71].</p>
+        <p id="loops-demo">Demo: See console/output for iteration results.</p>
+    </section>
+    
+    <section id="topic-7">
+        <h2>7. Functions</h2>
+        <p>Functions group code for reuse, can take parameters, and return values. They can be <strong>declared</strong>, used as <strong>expressions</strong>, or written as <strong>arrow functions</strong>.</p>
+        <p id="functions-demo">Demo: See console/output for function call results.</p>
+    </section>
+    
+    <section id="topic-8">
+        <h2>8. Scope & Hoisting</h2>
+        <p><strong>Scope:</strong> Determines where variables are accessible (Global or Local).</p>
+        <p><strong>Hoisting:</strong> <code>var</code> variables and function declarations are moved to the top of their scope during compilation.</p>
+        <p id="scope-hoisting-demo">Demo: See console/output for variable accessibility examples.</p>
+    </section>
+
+    <section id="topic-9">
+        <h2>9. Arrays</h2>
+        <p>Arrays store multiple values and have methods like <code>push()</code>, <code>pop()</code>, <code>map()</code>, <code>filter()</code>, and <code>reduce()</code></p>
+        <p id="arrays-demo">Original Array: [1, 2, 3]</p>
+        <p id="arrays-results">Array Results:</p>
+    </section>
+
+    <section id="topic-10">
+        <h2>10. Objects</h2>
+        <p>Objects store key-value pairs where keys are strings. They can include methods (functions inside objects).</p>
+        <p id="objects-demo">Demo Object: { name: "Sara", age: 22 } </p>
+        <p id="objects-greet">Method Output:</p>
+    </section>
+
+    <section id="topic-11">
+        <h2>11. Strings</h2>
+        <p>Strings are sequences of characters. [cite_start]JS provides methods for manipulation (e.g., <code>length</code>, <code>trim()</code>, <code>toUpperCase()</code>, <code>slice()</code>).</p>
+        <p id="strings-demo">Original String: " JavaScript "</p>
+        <p id="strings-results">Manipulation Results:</p>
+    </section>
+
+    <section id="topic-12">
+        <h2>12. Math & Date</h2>
+        <p><strong>Math:</strong> Performs calculations like rounding and random numbers.</p>
+        <p><strong>Date:</strong> Used to get current date/time.</p>
+        <p id="math-date-demo">Math Demo (Random and Floor):</p>
+        <p id="date-demo">Date Demo (Current Year):</p>
+    </section>
+
+    <section id="topic-13">
+        <h2>13. DOM Manipulation</h2>
+        <p>The **DOM** (Document Object Model) is the browser's representation of HTML. JS can read and modify it.</p>
+        <p id="dom-demo" style="color: blue;">Original content: Hello (This text will be changed by JavaScript).</p>
+    </section>
+
+    <section id="topic-14">
+        <h2>14. Events</h2>
+        <p>Events detect user actions (like clicks, typing) and allow JS to respond with functions.</p>
+        <input type="text" id="test-input">
+        <button id="btn-click-me">Click Me (Event Demo)</button>
+        <p id="event-message">Click the button to see an alert!</p>
+    </section>
+
+    <section id="topic-15">
+        <h2>15. Timing Functions</h2>
+        <p><strong>setTimeout:</strong> Run code after a delay.</p>
+        <p><strong>setInterval:</strong> Repeat code at intervals.</p>
+        <p id="timing-demo">Demo: Check console/output log in 2 seconds.</p>
+    </section>
+
+    <section id="topic-16">
+        <h2>16. Error Handling</h2>
+        <p><strong>try...catch:</strong> Handle runtime errors gracefully.</p>
+        <p><strong>finally:</strong> Runs regardless of error.</p>
+        <p id="error-handling-demo">Demo: Attempting an error (accessing undefined variable) will be logged.</p>
+    </section>
+
+    <section id="topic-17">
+        <h2>17. JSON</h2>
+        <p>JSON (JavaScript Object Notation) is a data format for exchanging info[cite: 183]. Use <code>stringify</code> to convert object → string, and <code>parse</code> for string → object.</p>
+        <p id="json-demo">Original Object: {name:"Raj", age:25}</p>
+        <p id="json-results">Conversion Results:</p>
+    </section>
+
+    <section id="topic-18">
+        <h2>18. Fetch API</h2>
+        <p><code>fetch()</code> is used to get data from APIs and returns a promise.</p>
+        <p id="fetch-demo">Demo: Fetching a placeholder post and logging the title.</p>
+    </section>
+
+    <section id="topic-19">
+        <h2>19. Local Storage</h2>
+        [cite_start]<p>Store small data persistently in the browser[cite: 197]. [cite_start]Methods: <code>setItem</code>, <code>getItem</code>, <code>removeItem</code>, <code>clear</code>[cite: 198].</p>
+        <p id="local-storage-demo">Demo: Setting, getting, and removing a 'username'.</p>
+    </section>
+
+    <section id="topic-20">
+        <h2>20. ES6+ Features</h2>
+        [cite_start]<p><strong>Destructuring:</strong> Extract array/object values[cite: 205].</p>
+        [cite_start]<p><strong>Spread/rest:</strong> Copy/merge data or collect parameters[cite: 206].</p>
+        [cite_start]<p><strong>Template literals:</strong> Use <code>${variable}</code> inside strings[cite: 207].</p>
+        <p id="es6-demo">Demo Results:</p>
+    </section>
+
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> 
+    <script src="script.js"></script>
+</body>
+</html>

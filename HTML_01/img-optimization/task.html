@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Optimization Challenge</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .photo-card {
+            flex: 1 1 300px;
+            border: 1px solid #ccc;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Photo Gallery Challenge</h1>
+    <p>Optimize these images for performance! Use <code>srcset</code>, <code>sizes</code>, and the <code>&lt;picture&gt;</code> element.</p>
+    
+    <div class="gallery">
+        <!-- TASK 1: Optimize this image with srcset & sizes -->
+        <div class="photo-card">
+            <h2>Mountain Landscape</h2>
+            <!-- 
+                Available image sizes:
+                images/mountains-small.jpg  (400w)
+                images/mountains-medium.jpg (800w)
+                images/mountains-large.jpg  (1600w)
+            -->
+            <img src="images/mountains-large.jpg" alt="Snowy mountain range under a blue sky">
+            <p>A breathtaking view of the Himalayas.</p>
+        </div>
+
+        <!-- TASK 2: Optimize this image with srcset & sizes -->
+        <div class="photo-card">
+            <h2>Forest Path</h2>
+            <!-- 
+                Available image sizes:
+                images/forest-small.jpg  (400w)
+                images/forest-medium.jpg (800w)
+                images/forest-large.jpg  (1600w)
+            -->
+            <img src="images/forest-large.jpg" alt="A sunlit path through a green forest">
+            <p>A peaceful walk in the woods.</p>
+        </div>
+
+        <!-- TASK 3 (BONUS): Use the <picture> element to serve WebP -->
+        <div class="photo-card">
+            <h2>City Skyline</h2>
+            <!-- 
+                Available image formats & sizes:
+                WebP: images/city-small.webp, images/city-medium.webp, images/city-large.webp
+                JPG:  images/city-small.jpg,  images/city-medium.jpg,  images/city-large.jpg
+            -->
+            <img src="images/city-large.jpg" alt="A modern city skyline at dusk">
+            <p>The city lights coming on as the sun sets.</p>
+        </div>
+    </div>
+
+    <div style="margin-top: 2rem; padding: 1rem; background-color: #f8f9fa; border-radius: 5px;">
+        <h3>Instructions & Hints</h3>
+        <ul>
+            <li>Assume the gallery layout: on small screens, each image is <code>100vw</code>. On large screens, each image is about <code>30vw</code>.</li>
+            <li>Use the <code>sizes</code> attribute to tell the browser about this layout. e.g., <code>sizes="(max-width: 600px) 100vw, 30vw"</code></li>
+            <li>For the bonus task: Remember the structure of the <code>&lt;picture&gt;</code> element. Offer WebP first, then JPG as a fallback.</li>
+            <li>Check your work in the browser's DevTools Network tab! Simulate a mobile device and see which image file loads.</li>
+        </ul>
+    </div>
+</body>
+</html>

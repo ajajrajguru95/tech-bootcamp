@@ -1,0 +1,29 @@
+<!-- How to handle the specificity of CSS rule here to show the color blue for the following HTML element? -->
+
+<div class="blue red green test ajaj">Text</div>
+<div id="test">fsdf</div>
+<span>fsdf</span>
+!important
+
+<style>
+    .blue{
+        color: blue !important;
+    }
+    .red.blue{
+        color: red !important;
+    }
+</style>
+
+<!-- Specificity -->
+
+<!-- What will be output of the following code snippet? -->
+
+<div class="test">sdfsdf</div>
+
+<style>
+    .test{
+        min-width: 100px;
+        max-width: 50px;
+        width: 150px;
+    }
+</style>

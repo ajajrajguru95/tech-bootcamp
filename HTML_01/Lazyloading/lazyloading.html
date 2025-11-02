@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lazy Loading Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { background: #0078d7; color: #fff; padding: 2rem; text-align: center; }
+        .container { max-width: 800px; margin: 2rem auto; padding: 1rem; }
+        .image-block { margin-bottom: 2rem; }
+        img { width: 100%; max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px #0002; }
+        .desc { margin: 0.5rem 0 1.5rem 0; color: #333; }
+        .placeholder { background: #eee; height: 300px; display: flex; align-items: center; justify-content: center; color: #aaa; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lazy Loading Images Demo</h1>
+        <p>Scroll down to see images load only when they enter the viewport.</p>
+    </header>
+    <div class="container">
+        <div class="image-block">
+            <div class="desc">Image 1 (loads immediately)</div>
+            <img srcset="./img/1015-800x300.jpg 800w, ./img/1015-1600x600.jpg 1600w" src="./img/1015-800x300.jpg" alt="Nature 1">
+        </div>
+        <!-- Spacer to push images below the fold -->
+        <div style="height: 1000px;"></div>
+        <div class="image-block" style="background-image: url('./img/1016-800x300.jpg');">
+            <div class="desc">Image 2 (lazy loaded)</div>
+            <img src="./img/1016-800x300.jpg" alt="Nature 2" loading="lazy">
+        </div>
+        <div class="image-block">
+            <div class="desc">Image 3 (lazy loaded)</div>
+            <img src="./img/1025-800x300.jpg" alt="Nature 3" loading="lazy">
+        </div>
+        <div class="image-block">
+            <div class="desc">Image 4 (lazy loaded)</div>
+            <img src="./img/1035-800x300.jpg" alt="Nature 4" loading="lazy">
+        </div>
+        <div class="image-block">
+            <div class="desc">Image 5 (lazy loaded)</div>
+            <img src="./img/1045-800x300.jpg" alt="Nature 5" loading="lazy">
+        </div>
+    </div>
+    <footer style="text-align:center; padding:2rem; color:#888;">
+        <p>Notice how images below the fold load only when you scroll to them. This is <b>lazy loading</b> in action!</p>
+    </footer>
+</body>
+</html>

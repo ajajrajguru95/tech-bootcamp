@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * { box-sizing: border-box; }
+        
+        .demo-container {
+            display: flex;
+            gap: 40px;
+            margin: 30px 0;
+        }
+        
+        .box {
+            width: 200px;
+            padding: 20px;
+            border: 10px solid #333;
+            background-color: #e6f3ff;
+        }
+        
+        .with-margin {
+            margin: 30px;
+            background-color: #ffe6e6;
+        }
+        
+        .measurement {
+            font-family: monospace;
+            background: #333;
+            color: white;
+            padding: 5px;
+            margin-top: 10px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        
+        /* Visual guides */
+        .border-area { background-color: #cce5ff; }
+        .padding-area { background-color: #99ccff; }
+        .content-area { background-color: #66b2ff; padding: 10px; }
+        .margin-area { 
+            border: 2px dashed red; 
+            background-color: #ffcccc; 
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h2>Where Margins Fit in the Box Model</h2>
+    
+    <div class="demo-container">
+        <div class="margin-area">
+            <div class="box">
+                <div class="border-area">
+                    <div class="padding-area">
+                        <div class="content-area">
+                            <strong>Box Without Margin</strong>
+                            <div class="measurement">
+                                Total width: 200px (border-box)<br>
+                                Margin: 0px
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="margin-area">
+            <div class="box with-margin">
+                <div class="border-area">
+                    <div class="padding-area">
+                        <div class="content-area">
+                            <strong>Box With Margin</strong>
+                            <div class="measurement">
+                                Total width: 200px (border-box)<br>
+                                Margin: 30px each side<br>
+                                Space taken: 200 + 30 + 30 = 260px
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3>The Complete Formula:</h3>
+    
+    <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
+        <strong>With border-box:</strong><br>
+        <code>Total Space = width + margin-left + margin-right</code><br><br>
+        
+        <strong>With content-box:</strong><br>
+        <code>Total Space = width + padding-left + padding-right + border-left + border-right + margin-left + margin-right</code>
+    </div>
+</body>
+</html>

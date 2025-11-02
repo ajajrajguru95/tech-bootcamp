@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimized Images - The Solution</title>
+    <style>
+        body { font-family: sans-serif; }
+        img { max-width: 100%; height: auto; display: block; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Photography Blog</h1>
+    </header>
+    <main>
+        <article>
+            <h2>Sunset at the Beach</h2>
+            
+            <!-- THE ULTIMATE COMBO: Art direction, modern formats, and responsive sizes -->
+            <picture>
+                <!-- Large screens: get a wide WebP image with multiple sizes -->
+                <source media="(min-width: 1000px)"
+                        type="image/webp"
+                        srcset="images/sunset-landscape-large.webp 2000w,
+                                images/sunset-landscape-medium.webp 1000w"
+                        sizes="80vw"> <!-- Image takes up 80% of viewport width on large screens -->
+
+                <!-- Small screens: get a cropped WebP image -->
+                <source media="(max-width: 999px)"
+                        type="image/webp"
+                        srcset="images/sunset-portrait-large.webp 800w,
+                                images/sunset-portrait-small.webp 400w"
+                        sizes="100vw"> <!-- Image takes up 100% of viewport width on small screens -->
+
+                <!-- Fallback for large screens without WebP support -->
+                <source media="(min-width: 1000px)"
+                        srcset="images/sunset-landscape-large.jpg 2000w,
+                                images/sunset-landscape-medium.jpg 1000w"
+                        sizes="80vw">
+
+                <!-- Fallback for small screens without WebP support -->
+                <source media="(max-width: 999px)"
+                        srcset="images/sunset-portrait-large.jpg 800w,
+                                images/sunset-portrait-small.jpg 400w"
+                        sizes="100vw">
+
+                <!-- Final fallback for very old browsers -->
+                <img src="images/sunset-landscape-large.jpg" alt="A beautiful orange sunset over a calm ocean">
+            </picture>
+            
+            <p>This was taken with a long exposure to smooth out the waves.</p>
+        </article>
+    </main>
+</body>
+</html>

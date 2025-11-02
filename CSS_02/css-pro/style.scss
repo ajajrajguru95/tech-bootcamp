@@ -1,0 +1,336 @@
+/*
+==================================================
+1. SCSS VARIABLES & BASE STYLES
+==================================================
+*/
+
+// SCSS Variables (replacing CSS :root variables)
+$color-primary: #007BFF;
+$color-primary-hover: #0056b3; // Calculated darker shade for reuse
+$color-success: #28A745;
+$color-text-main: #333333;
+$color-text-code: #B85400;
+$color-bg-light: #F8F9FA;
+$color-bg-section: #FDFDFE;
+$color-border-light: #E9ECEF;
+$font-family-base: 'Arial', sans-serif;
+$font-family-code: 'Consolas', 'Courier New', monospace;
+$breakpoint-desktop: 769px;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-family-base;
+    line-height: 1.6;
+    color: $color-text-main;
+    background-color: #FFFFFF;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+p {
+    margin-bottom: 1.2rem;
+}
+
+section {
+    /* SCSS uses variables directly in functions */
+    background: linear-gradient(to bottom, #FFFFFF 0%, $color-bg-section 100%);
+    border: 1px solid $color-border-light;
+    border-radius: 8px;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+}
+
+/*
+==================================================
+2. HEADER & STICKY BEHAVIOR
+==================================================
+*/
+header {
+    background-color: #f7f7f7;
+    border-bottom: 3px solid $color-primary;
+    padding: 15px 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    /* Use SCSS nesting for the media query */
+    @media (min-width: $breakpoint-desktop) {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+}
+
+
+/*
+==================================================
+3. HEADING STYLES (H1 - H6)
+==================================================
+*/
+
+h1, h2, h3, h4, h5, h6 {
+    // SCSS can nest all headings for common styles if desired
+    color: $color-text-main;
+    margin-top: 20px;
+    margin-bottom: 15px;
+
+    &.h1 {
+        font-size: 2.5em;
+        color: $color-primary;
+        border-bottom: 4px solid $color-primary;
+        padding-bottom: 15px;
+        margin-top: 0;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+
+    &.h2 {
+        font-size: 2em;
+        color: $color-primary;
+        border-bottom: 3px solid $color-primary;
+        padding-bottom: 10px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+    
+    &.h3 {
+        font-size: 1.5em;
+        color: $color-primary;
+        border-left: 5px solid $color-border-light;
+        padding-left: 10px;
+    }
+
+    &.h4 {
+        font-size: 1.3em;
+        font-weight: 600;
+    }
+    
+    &.h5 {
+        font-size: 1.1em;
+        font-weight: 600;
+    }
+    
+    &.h6 {
+        font-size: 1em;
+        font-style: italic;
+    }
+}
+// Note: Since you used direct tag selectors (h1, h2, etc.), 
+// the compilation will be cleaner if we separate them slightly:
+h1 { @extend .h1; }
+h2 { @extend .h2; }
+h3 { @extend .h3; }
+h4 { @extend .h4; }
+h5 { @extend .h5; }
+h6 { @extend .h6; }
+
+
+/*
+==================================================
+4. LINKS AND LISTS
+==================================================
+*/
+
+a {
+    color: $color-primary;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+        color: $color-primary-hover; // Using SCSS variable for consistency
+        text-decoration: underline;
+    }
+}
+
+ul, ol {
+    margin-bottom: 20px;
+    padding-left: 25px;
+
+    li {
+        margin-bottom: 8px;
+        line-height: 1.4;
+
+        ul & { // Target ul inside ul
+            list-style-type: square;
+        }
+
+        ol & { // Target ol inside ol
+            font-weight: bold;
+            &::marker {
+                color: $color-primary;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+/*
+==================================================
+5. DEFINITION LISTS (DL)
+==================================================
+*/
+
+dl {
+    margin-bottom: 25px;
+    border-left: 4px solid $color-bg-light;
+    padding-left: 15px;
+
+    dt {
+        font-weight: bold;
+        color: $color-success;
+        margin-top: 10px;
+        padding-right: 5px;
+        display: inline-block;
+    }
+
+    dd {
+        margin-left: 0;
+        padding-left: 0;
+        margin-bottom: 10px;
+    }
+}
+
+
+/*
+==================================================
+6. CODE AND TABLES
+==================================================
+*/
+
+/* Inline Code */
+code {
+    background-color: #F0F0F0;
+    color: $color-text-code;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: $font-family-code;
+    font-size: 0.95em;
+}
+
+/* Code Snippet Blocks */
+.code-block {
+    background-color: $color-bg-light;
+    border: 1px solid $color-border-light;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 20px 0;
+    overflow-x: auto;
+
+    pre code { // Nested selector for pre code
+        display: block;
+        white-space: pre-wrap;
+        background: none;
+        padding: 0;
+        border: none;
+        color: $color-text-code;
+        font-size: 1em;
+        line-height: 1.4;
+    }
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95em;
+
+    th, td {
+        border: 1px solid $color-border-light;
+        padding: 10px 15px;
+        text-align: left;
+    }
+
+    th {
+        background-color: $color-primary;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    tr:nth-child(even) {
+        background-color: $color-bg-light;
+    }
+}
+
+/*
+==================================================
+7. SECTION SEPARATORS
+==================================================
+*/
+hr {
+    border: 0;
+    border-top: 1px dashed #CED4DA;
+    margin: 40px 0;
+}
+
+/*
+==================================================
+8. NAVIGATION STYLING
+==================================================
+*/
+
+#mainNav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 10px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+
+    a { // Nested 'a' selector
+        color: #FFFFFF;
+        text-decoration: none;
+        font-family: $font-family-base;
+        font-size: 0.95em;
+        font-weight: 600;
+
+        padding: 10px 18px;
+        border-radius: 5px;
+        background-color: $color-primary; // Using SCSS variable
+
+        transition: background-color 0.3s ease, transform 0.2s ease;
+
+        &:hover { // Nested pseudo-class
+            background-color: $color-primary-hover; // Using SCSS variable
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+            transform: translateY(-2px);
+        }
+    }
+}
+
+/*
+==================================================
+9. BACK TO TOP BUTTON
+==================================================
+*/
+
+#backToTopBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    
+    background-color: $color-primary;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5em;
+    line-height: 45px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+
+    &:hover { // Nested pseudo-class
+        background-color: $color-primary-hover;
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model - The Problem</title>
+    <style>
+        .problem-box {
+            width: 300px;
+            padding: 20px;
+            border: 5px solid #333;
+            margin: 30px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            border: 2px dashed #ccc;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>The Box Model Problem</h1>
+    <p>I want this box to be 300px wide, but it's actually much wider!</p>
+    
+    <div class="container">
+        <div class="problem-box">
+            This box has:<br>
+            width: 300px<br>
+            padding: 20px<br>
+            border: 5px solid<br>
+            margin: 30px<br>
+            <strong>Total width: 300 + 20 + 20 + 5 + 5 = 350px!</strong>
+        </div>
+    </div>
+</body>
+</html>

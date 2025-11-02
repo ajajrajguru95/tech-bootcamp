@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .comparison {
+            display: flex;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .content-box-example, .border-box-example {
+            width: 200px;
+            padding: 20px;
+            border: 10px solid #333;
+            background-color: #f0f0f0;
+        }
+        
+        .content-box-example {
+            box-sizing: content-box; /* DEFAULT */
+            background-color: #ffe6e6;
+        }
+        
+        .border-box-example {
+            box-sizing: border-box; /* WHAT WE WANT */
+            background-color: #e6ffe6;
+        }
+        
+        .measurement {
+            font-family: monospace;
+            background: #333;
+            color: white;
+            padding: 5px;
+            margin-top: 10px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Content-Box vs Border-Box: Real Comparison</h2>
+    
+    <div class="comparison">
+        <div class="content-box-example">
+            <strong>Content-Box</strong>
+            <p>width: 200px<br>padding: 20px<br>border: 10px</p>
+            <div class="measurement">Actual width: 200 + 20 + 20 + 10 + 10 = 260px! 😱</div>
+        </div>
+        
+        <div class="border-box-example">
+            <strong>Border-Box</strong>
+            <p>width: 200px<br>padding: 20px<br>border: 10px</p>
+            <div class="measurement">Actual width: 200px exactly! ✅</div>
+        </div>
+    </div>
+
+    <h3>Why This Matters in Real Layouts:</h3>
+    
+    <div style="display: flex; width: 500px; border: 2px solid red; padding: 10px;">
+        <div style="width: 50%; padding: 20px; border: 5px solid blue; background: #e6f3ff; box-sizing: content-box;">
+            Content-Box 50%<br>Actually takes more than 50%!
+        </div>
+        <div style="width: 50%; padding: 20px; border: 5px solid green; background: #f0ffe6; box-sizing: border-box;">
+            Border-Box 50%<br>Actually takes exactly 50%!
+        </div>
+    </div>
+</body>
+</html>

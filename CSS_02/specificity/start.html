@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Specificity - The Problem</title>
+    <style>
+        /* Why isn't this button blue? */
+        .primary-button {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+        }
+        
+        button {
+            background-color: red;
+            color: black;
+            padding: 15px 30px;
+        }
+        
+        #submit-btn {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>The Specificity Problem</h1>
+    <p>Which styles will actually apply? The order seems random!</p>
+    
+    <button class="primary-button" id="submit-btn">Submit Form</button>
+    
+    <div style="margin-top: 30px; padding: 15px; background: #f5f5f5;">
+        <h3>Specificity Hierarchy (Most to Least Powerful):</h3>
+        <ol>
+            <li>!important (avoid when possible)</li>
+            <li>Inline styles (style attribute)</li>
+            <li>ID selectors (#submit-btn)</li>
+            <li>Class selectors (.primary-button)</li>
+            <li>Element selectors (button)</li>
+        </ol>
+    </div>
+    <div class="specificity-demo">
+    <h3>Specificity Calculator</h3>
+    <p>Try these selectors:</p>
+    <ul>
+        <li><code>div</code> = (0,0,1)</li>
+        <li><code>.container</code> = (0,1,0)</li>
+        <li><code>#main</code> = (1,0,0)</li>
+        <li><code>div#main.container</code> = (1,1,1)</li>
+    </ul>
+</div>
+<div class="specificity-demo">
+        <h3>Specificity Score Calculation:</h3>
+        <p><code>button</code> = (0,0,1) - 1 point for element</p> 
+        <p><code>.primary-button</code> = (0,1,0) - 10 points for class</p>
+        <p><code>#submit-btn</code> = (1,0,0) - 100 points for ID</p>
+        <p><strong>Higher score wins!</strong></p>
+    </div>
+
+</body>
+</html>

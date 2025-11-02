@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model - The Solution</title>
+    <style>
+        /* THE MAGIC FIX: Apply border-box to everything */
+        * {
+            box-sizing: border-box;
+        }
+        
+        .solution-box {
+            width: 300px;
+            padding: 20px;
+            border: 5px solid #333;
+            margin: 30px;
+            background-color: #e0f0e0;
+        }
+        .container {
+            border: 2px dashed #ccc;
+            width: 400px;
+        }
+        
+        /* Visual demonstration */
+        .box-visual {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .content-box {
+            box-sizing: content-box;
+            width: 100px;
+            padding: 20px;
+            border: 5px solid red;
+            background: #ffe0e0;
+        }
+        .border-box {
+            box-sizing: border-box;
+            width: 100px;
+            padding: 20px;
+            border: 5px solid green;
+            background: #e0ffe0;
+        }
+    </style>
+</head>
+<body>
+    <h1>The Box Model Solution</h1>
+    <p>With <code>box-sizing: border-box</code>, padding and border are INCLUDED in the width!</p>
+    
+    <div class="container">
+        <div class="solution-box">
+            This box has:<br>
+            width: 300px<br>
+            padding: 20px<br>
+            border: 5px solid<br>
+            margin: 30px<br>
+            <strong>Total width: 300px (exactly what we set!)</strong>
+        </div>
+    </div>
+
+    <div class="box-visual">
+        <div class="content-box">
+            content-box<br>Width: 150px!
+        </div>
+        <div class="border-box">
+            border-box<br>Width: 100px!
+        </div>
+    </div>
+</body>
+</html>

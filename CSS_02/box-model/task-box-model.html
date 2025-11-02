@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Challenge</title>
+    <style>
+        /* TASK 1: Fix the box-sizing for all elements */
+        /* Add your code here */
+        
+        .card {
+            width: 250px;
+            padding: 25px;
+            border: 3px solid #4CAF50;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        /* TASK 2: Make these boxes exactly 100px wide including padding */
+        .box {
+            width: 100px;
+            padding: 20px;
+            border: 2px solid #2196F3;
+            margin: 10px;
+            display: inline-block;
+            background-color: #e3f2fd;
+        }
+        
+        /* TASK 3: Create a centered container that's exactly 80% of viewport width */
+        .centered-container {
+            width: 80vw;
+            padding: 30px;
+            border: 1px solid #ccc;
+            /* Add code to center this container horizontally */
+        }
+    </style>
+</head>
+<body>
+    <h1>Box Model Challenge</h1>
+    
+    <div class="card">
+        <h2>Card Title</h2>
+        <p>This card should be exactly 250px wide, including its padding and border.</p>
+    </div>
+    
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+    
+    <div class="centered-container">
+        <p>This container should be exactly 80% of the viewport width and centered on the page.</p>
+    </div>
+</body>
+</html>

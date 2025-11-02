@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Specificity - The Solution</title>
+    <style>
+        /* SOLUTION: Understand and control specificity */
+        
+        /* Low specificity - element selector */
+        button {
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+        }
+        
+        /* Medium specificity - class selector */
+        .primary-button {
+            background-color: #2196F3;
+            color: white;
+        }
+        
+        /* High specificity - but used sparingly */
+        #submit-btn {
+            font-weight: bold;
+        }
+        
+        /* Specificity calculation game */
+        .specificity-demo {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 4px solid #2196F3;
+            background: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Specificity - Controlled!</h1>
+    
+    <button class="primary-button" id="submit-btn">Submit Form</button>
+    
+    <div class="specificity-demo">
+        <h3>Specificity Score Calculation:</h3>
+        <p><code>button</code> = (0,0,1) - 1 point for element</p> 
+        <p><code>.primary-button</code> = (0,1,0) - 10 points for class</p>
+        <p><code>#submit-btn</code> = (1,0,0) - 100 points for ID</p>
+        <p><strong>Higher score wins!</strong></p>
+    </div>
+
+    <div style="margin-top: 30px; padding: 15px; background: #fff3cd;">
+        <h3>Best Practices:</h3>
+        <ul>
+            <li>Use classes for most styling</li>
+            <li>Avoid using IDs for CSS when possible</li>
+            <li>Never use !important unless absolutely necessary</li>
+            <li>Keep specificity low and consistent</li>
+        </ul>
+    </div>
+
+    <div class="specificity-demo">
+    <h3>Specificity Calculator</h3>
+    <p>Try these selectors:</p>
+    <ul>
+        <li><code>div</code> = (0,0,1)</li>
+        <li><code>.container</code> = (0,1,0)</li>
+        <li><code>#main</code> = (1,0,0)</li>
+        <li><code>div#main.container</code> = (1,1,1)</li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CSS — Guide & Examples</title>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/3437d0c89f.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+	<div class="site-wrapper">
+		<header>
+			<div>
+				<h1>CSS — Guide & Examples</h1>
+				<p class="lead">Comprehensive guide covering CSS concepts, examples, and quick snippets.</p>
+			</div>		
+
+			<nav id="mainNav">
+			    <a href="#introduction-to-css">Fundamentals</a>
+			    <a href="#basic-styling-properties">Core Styling</a>
+			    <a href="#introduction-to-layout">Layout Mastery</a>
+			    <a href="#advanced-css-properties">Advanced CSS</a>
+			    <a href="#advanced-tools-and-practices">Workflow & Tools</a>
+			    <a href="#css-related-job-roles">Career Paths</a>
+			</nav>
+		</header>
+
+	
+		<section id="introduction-to-css">
+		    
+		    <h2>Introduction to CSS</h2>
+		    
+		    <p>CSS (Cascading Style Sheets) is what makes websites look good. It handles the colors, fonts, layouts, and overall aesthetics.</p>
+		    <p>You use **HTML for the structure** and **CSS for the style**.</p>
+		    
+		    <div class="version">
+		        <h3>CSS Versions</h3>
+		        <p>CSS has evolved significantly over the years, from basic styling to advanced layout and animation capabilities.</p>
+		        
+		        <ul>
+		            <li>
+		                <strong>CSS1</strong>: The foundational version, introducing basic styling for fonts, colors, and margins.
+		            </li>
+		            <li>
+		                <strong>CSS2</strong>: Expanded upon CSS1, adding features like positioning elements, pseudo-classes, and improved layout options.
+		            </li>
+		            <li>
+		                <strong>CSS3</strong>: This is the current and continuously evolving version. It introduces advanced features such as:
+		                <ul>
+		                    <li>Animations and transitions</li>
+		                    <li>Media queries for responsive design</li>
+		                    <li>Web fonts</li>
+		                    <li>Gradients, shadows, and rounded corners</li>
+		                    <li>Flexible layout options like Flexbox and Grid Layout</li>
+		                </ul>
+		            </li>
+		        </ul>
+		    </div>
+		    
+		    <div class="css-application">
+		        <h3>How to Apply CSS (3 Ways)</h3>
+		        <p>There are three primary methods for applying CSS to an HTML document, each with different use cases and levels of priority.</p>
+		        
+		        <dl>
+		            <dt>Inline Styles</dt>
+		            <dd>Styles written directly inside the HTML element's <code>style</code> attribute.</dd>
+		            <dd><strong>Caution:</strong> This is generally discouraged as it is messy and defeats the purpose of separation of concerns.</dd>
+		    
+		            <dt>Internal Stylesheet</dt>
+		            <dd>Styles written directly in a <code>&lt;style&gt;</code> tag within the HTML <code>&lt;head&gt;</code> of a single page.</dd>
+		            <dd><strong>Use Case:</strong> Suitable for small, single-page projects or for testing purposes.</dd>
+		    
+		            <dt>External Stylesheet (Best Practice)</dt>
+		            <dd>Styles are in a separate <code>.css</code> file, linked via the <code>&lt;link&gt;</code> tag.</dd>
+		            <dd>This is the standard practice for large websites, promoting clean, maintainable, and reusable code.</dd>
+		        </dl>
+		    </div>
+		    
+		    <div class="selector">
+		        <h3>Selectors: Who to Style</h3>
+		        <p>Selectors are patterns used to select the HTML elements you want to style. They form the fundamental basis of all CSS rules.</p>
+
+		        <dl>
+		            <dt>Element Selector</dt>
+		            <dd>Targets all instances of an HTML tag (e.g., <code>p</code>, <code>div</code>).</dd>
+		    
+		            <dt>Class Selector</dt>
+		            <dd>Targets elements with a specific <code>class</code> attribute (e.g., <code>.my-class</code>).</dd>
+		    
+		            <dt>ID Selector</dt>
+		            <dd>Targets a single, unique element with a specific <code>id</code> attribute (e.g., <code>#unique-id</code>).</dd>
+		        </dl>
+		    </div>
+		    
+		    <div class="cascade">
+		        <h3>The "Cascade" Rule</h3>
+		        <p>The Cascade is the process the browser uses to decide which CSS rule applies to an element when multiple, conflicting rules target it.</p>
+		        
+		        <ul>
+		            <li>
+		                <strong>Specificity:</strong> This determines which rule wins when multiple rules target the same element (The hierarchy is **ID > Class > Element**).
+		            </li>
+		            <li>
+		                <strong>Source Order (Tie-breaking):</strong> If two rules have the exact same specificity, the rule declared **later** in the stylesheet wins.
+		            </li>
+		            <li>
+		                <strong><code>!important</code>:</strong> This declaration can override all other specificity rules, but its use is generally discouraged as it can lead to difficult-to-maintain code.
+		            </li>
+		        </ul>
+		    </div>
+		    
+		    <div class="box-model">
+		        <h3>The CSS Box Model</h3>
+		        <p>The Box Model is one of the most fundamental concepts in CSS. It describes how HTML elements are structured, viewed, and allocated space on a webpage.</p>
+		        <p><strong>Every Element is a Box</strong>, composed of Content, Padding, Border, and Margin.</p>
+		    </div>
+		    
+		</section>
+
+
+
+		<section id="basic-styling-properties">
+		    
+		    <h2>Basic Styling Properties: Building the Style Guide Foundation</h2>
+		    
+		    <p>These essential properties are the foundation of any visual design. Designers use them to define the core look and feel (the **style guide** or **design system**) before moving on to complex layouts and advanced styles.</p>
+		    
+		    
+		    <div class="basic-typography">
+		        <h3>Typography</h3>
+		        <p>Typography controls the appearance of text, ensuring readability and visual hierarchy.</p>
+		        
+		        <dl>
+		            <dt><code>font-family</code></dt>
+		            <dd>Sets the typeface (e.g., Arial, Georgia, or a custom web font).</dd>
+		            
+		            <dt>Linking Google Fonts</dt>
+		            <dd>Custom fonts are typically linked in the HTML's **`<head>`** using a **`<link>`** tag, then applied with `font-family`.</dd>
+		            
+		            <dt><code>font-size</code></dt>
+		            <dd>Sets the size of the text (e.g., `16px`, `1.2em`, `1rem`).</dd>
+		            
+		            <dt><code>font-weight</code></dt>
+		            <dd>Sets the thickness of the characters (e.g., `normal`, `bold`, or numeric values like `400`, `700`).</dd>
+		            
+		            <dt><code>text-align</code></dt>
+		            <dd>Controls the horizontal alignment of the text (`left`, `center`, `right`, or `justify`).</dd>
+		        </dl>
+
+		        <p>Example: Setting a basic font and size for the body and linking a Google Font.</p>
+		        <div class="code-block">
+		            <p>HTML (`<head>` section):</p>
+		            <pre><code>&lt;link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"&gt;</code></pre>
+					<p>CSS:</p>
+					<pre><code>
+					body {
+					    font-family: 'Roboto', sans-serif;
+					    font-size: 16px;
+					}
+
+					h1 {
+					    font-weight: 700;
+					    text-align: center;
+					}
+		            </code></pre>
+		        </div>
+		    </div>
+		    
+		    <div class="basic-color">
+		        <h3>Color and Backgrounds</h3>
+		        <p>These properties define the color palette of the interface for both foreground text and element backgrounds.</p>
+
+		        <dl>
+		            <dt><code>color</code></dt>
+		            <dd>Sets the color of the text (foreground color). Accepts hex codes, RGB, HSL, or color names.</dd>
+		            
+		            <dt><code>background-color</code></dt>
+		            <dd>Sets the solid background color of the element's box.</dd>
+		            
+		            <dt><code>background-image</code></dt>
+		            <dd>Sets an image as the background, often used with other `background-` properties (e.g., `repeat`, `position`, `size`).</dd>
+		        </dl>
+		        
+		        <p>Example: Applying the primary brand color to a button.</p>
+		        <div class="code-block">
+		            <pre><code>
+					/* Define a variable for the primary color */
+					:root {
+					    --primary-color: #007bff; 
+					}
+
+					.button-primary {
+					    background-color: var(--primary-color);
+					    color: white;
+					    border: none;
+					    padding: 10px 20px;
+					}
+		            </code></pre>
+		        </div>
+		    </div>
+		    
+		    <div class="basic-dimensions">
+		        <h3>Dimensions</h3>
+		        <p>The **`width`** and **`height`** properties control the size of an element's content area, which is foundational for layout construction.</p>
+		        
+		        <dl>
+		            <dt><code>width</code></dt>
+		            <dd>Sets the width of the content area (e.g., `100px`, `50%`, `auto`).</dd>
+		            
+		            <dt><code>height</code></dt>
+		            <dd>Sets the height of the content area (e.g., `50vh`, `300px`, `auto`).</dd>
+		        </dl>
+		        
+		        <p>Example: Setting a container to take up most of the viewport height.</p>
+		        <div class="code-block">
+		            <pre><code>
+					.main-container {
+					    width: 90%;
+					    /* 80% of the viewport height */
+					    height: 80vh; 
+					    margin: 0 auto; /* Center the box horizontally */
+					}
+		            </code></pre>
+		        </div>
+		    </div>
+		    
+		    <div class="basic-icons">
+		        <h3>Icons (Using Font Awesome)</h3>
+		        <p><i class="fa-solid fa-camera"></i> Instead of image files, modern designs often use libraries like **Font Awesome** to include scalable, vector-based icons that can be styled easily with CSS. </p>
+		        
+		        <dl>
+		            <dt>How to Include Font Awesome</dt>
+		            <dd>Link the library's CSS file in the HTML's **`<head>`** section (using a CDN or local download).</dd>
+		            
+		            <dt>How to Use Icons</dt>
+		            <dd>Insert an empty **`&lt;i&gt;`** or **`&lt;span&gt;`** tag with the specified classes for the desired icon (e.g., `fa-solid fa-home`).</dd>
+		        </dl>
+		        
+		        <p>Example: Linking the library and using a "home" icon, then styling it with CSS.</p>
+		        <div class="code-block">
+		            <p>HTML (`&lt;head&gt;` section for linking):</p>
+		            <pre><code>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"&gt;
+						            </code></pre>
+						            <p>HTML (`&lt;body&gt;` section for usage):</p>
+						            <pre><code>
+						&lt;button&gt;
+						    &lt;i class="fa-solid fa-home"&gt;&lt;/i&gt; Home
+						&lt;/button&gt;
+						            </code></pre>
+						            <p>CSS (for styling):</p>
+						            <pre><code>
+						.fa-home {
+						    /* Style the icon color and size */
+						    color: #007bff;
+						    font-size: 1.2em;
+						    margin-right: 5px;
+						}
+		            </code></pre>
+		        </div>
+		    </div>
+		    
+		</section>
+
+		
+		<section id="advanced-css-properties">
+		    
+		    <h2>Advanced CSS Properties and Concepts</h2>
+		    
+		    <p>Building upon the fundamentals, these advanced topics allow for complex layouts, animations, and dynamic styling necessary for modern web development.</p>		  
+		    
+		    <div class="advanced-display">
+		        <h3>The Display Property</h3>
+		        <p>The **`display`** property is fundamental to CSS layout, determining how an element behaves and interacts with other elements on the page.</p>
+		        
+		        <dl>
+		            <dt><code>block</code></dt>
+		            <dd>Elements take up the full available width and start on a new line (e.g., `div`, `p`).</dd>
+		            
+		            <dt><code>inline</code></dt>
+		            <dd>Elements only take up as much width as necessary and flow along the same line as surrounding content (e.g., `span`, `a`).</dd>
+		            
+		            <dt><code>inline-block</code></dt>
+		            <dd>Elements flow inline but accept width, height, and vertical margins/padding.</dd>
+		            
+		            <dt><code>none</code></dt>
+		            <dd>Hides the element completely, removing it from the document flow.</dd>
+		        </dl>
+		    </div>
+		    
+		    <div class="css-positioning">
+		        <h3>CSS Positioning and Stacking</h3>
+		        <p>The **`position`** property is used to precisely place an element, allowing for control over the standard document flow.</p>
+
+		        <dl>
+		            <dt><code>static</code></dt>
+		            <dd>The default position; elements are positioned according to the normal flow.</dd>
+		            
+		            <dt><code>relative</code></dt>
+		            <dd>Positioned relative to its normal position, affecting only itself.</dd>
+		            
+		            <dt><code>absolute</code></dt>
+		            <dd>Positioned relative to its nearest positioned ancestor, removed from the normal flow.</dd>
+		            
+		            <dt><code>fixed</code></dt>
+		            <dd>Positioned relative to the viewport, remaining in place when the page is scrolled.</dd>
+		            
+		            <dt><code>sticky</code></dt>
+		            <dd>Behaves as `relative` until a threshold is reached, after which it becomes `fixed`.</dd>
+		        </dl>
+
+		        <p>The **`z-index`** property controls the **stacking order** of positioned elements, determining which elements appear on top of others.</p>
+		        <p>Example: Controlling the overlap of two positioned elements.</p>
+		        
+		        <div class="code-block">
+		            <pre><code>
+					.div-front { 
+					    position: absolute; 
+					    z-index: 2; /* Sits on top */
+					    background-color: blue; 
+					}
+					.div-back  { 
+					    position: absolute; 
+					    z-index: 1; /* Sits underneath */
+					    background-color: red; 
+					}
+		            </code></pre>
+		        </div>
+		    </div>
+		    
+		    <div class="responsive-design">
+		        <h3>Responsive Web Design (RWD)</h3>
+		        <p>RWD ensures that web pages render well on a variety of devices and screen sizes, from mobile phones to desktop monitors.</p>
+		        
+		        <ul>
+		            <li>
+		                **Mobile-First Design:** The strategy of beginning development for mobile devices first, and then scaling up to larger screens.
+		            </li>
+		            <li>
+		                **Media Queries:** Syntax used to apply CSS rules only when certain conditions (like screen size or orientation) are met.
+		            </li>
+		        </ul>
+		        
+		        <p>Example: Using Media Queries for common breakpoints:</p>
+		        <div class="code-block">
+		            <pre><code>
+					/* Styles applied up to a maximum width of 768px (Mobile) */
+					@media (max-width: 768px) {
+					    body {
+					        background-color: lightgreen;
+					    }
+					}
+
+					/* Styles applied from a minimum width of 769px and up (Tablet/Desktop) */
+					@media (min-width: 769px) {
+					    body {
+					        background-color: lightblue;
+					    }
+					}
+		            </code></pre>
+		        </div>
+		    </div>
+		    
+		    <div class="css-variables">
+		        <h3>CSS Variables (Custom Properties)</h3>
+		        <p>CSS Variables (or Custom Properties) allow you to define reusable values (like colors or fonts) that can be accessed throughout your stylesheets, simplifying maintenance and consistency.</p>
+		        
+		        <p>Example: Defining and using custom properties:</p>
+		        <div class="code-block">
+		            <pre><code>
+					:root {
+					    /* Define variables globally within the :root selector */
+					    --bg-color: #333333;
+					    --txt-color: white;
+					}
+
+					body {
+					    /* Access variables using the var() function */
+					    background-color: var(--bg-color);
+					}
+
+					h1, div {
+					    color: var(--txt-color);
+					}
+		            </code></pre>
+		        </div>
+		    </div>
+		    
+		    <div class="transitions-transforms">
+		        <h3>Transitions and Transformations</h3>
+		        <p>These properties enable smooth, dynamic visual effects without the need for JavaScript, enhancing user experience.</p>
+		        
+		        <ul>
+		            <li>
+		                **Transitions:** The **`transition`** property controls the speed and smoothness of property changes when an element changes state (e.g., on `hover`).
+		            </li>
+		            <li>
+		                **Transformations:** The **`transform`** property applies 2D or 3D visual changes. Functions include:
+		                <ul>
+		                    <li>`translate()` (move)</li>
+		                    <li>`rotate()` (turn)</li>
+		                    <li>`scale()` (resize)</li>
+		                </ul>
+		            </li>
+		        </ul>
+		        <p>Example: An element can be smoothly scaled up on hover using: <code>transition: transform 0.3s ease; transform: scale(1.1);</code></p>
+		    </div>
+		    
+		    <div class="pseudo-selectors">
+		        <h3>Pseudo-classes and Pseudo-elements</h3>
+		        <p>These selectors target elements based on their state or position (Pseudo-classes) or allow styling of specific parts of an element (Pseudo-elements).</p>
+
+		        <dl>
+		            <dt>Pseudo-classes (Single colon: `:`) </dt>
+		            <dd>Select elements based on a state (e.g., `:hover`, `:focus`, `:active`) or position (e.g., `:nth-child()`, `:first-child`).</dd>
+		            <dd><strong>Example:</strong> Styling an input field when it is active: <code>input:focus { border-color: blue; }</code></dd>
+		    
+		            <dt>Pseudo-elements (Double colon: `::`)</dt>
+		            <dd>Select and style a specific part of an element (e.g., `::first-letter`) or insert decorative content (`::before`, `::after`).</dd>
+		            <dd><strong>Example:</strong> Customizing the first letter of a heading:</dd>
+		            <div class="code-block">
+		                <pre><code>
+						h2::first-letter { 
+						    font-size: 2em; 
+						    text-transform: uppercase; 
+						}
+		                </code></pre>
+		            </div>
+		        </dl>
+		        
+		        <p><strong>Attribute Selectors:</strong> You can also select elements based on their HTML attributes. Example: <code>[type="text"]</code> targets all text input fields.</p>
+		    </div>
+		    
+		</section>
+
+		<section id="introduction-to-layout">
+    
+		    <h2>Introduction to Layout: Flexbox and Grid</h2>
+		    
+		    <p>Modern CSS relies on powerful, two-dimensional layout modules—Flexbox and Grid—to arrange elements effectively and create responsive designs.</p>
+		    
+		    <div class="flexbox-layout">
+		        <h3>Flexbox (Flexible Box Layout)</h3>
+		        <p>Flexbox is a **one-dimensional** layout model primarily designed for arranging items in a single row or a single column. It's ideal for distributing space between items and aligning them.</p>
+
+		        <dl>
+		            <dt>Setting the Container</dt>
+		            <dd>Applying **`display: flex;`** to the parent element defines it as a flex container, turning its direct children into flex items.</dd>
+		            
+		            <dt><code>flex-direction</code></dt>
+		            <dd>Defines the **main axis** (e.g., `row`, `row-reverse`, `column`, `column-reverse`).</dd>
+		            
+		            <dt><code>justify-content</code></dt>
+		            <dd>Distributes space and aligns items **along the main axis** (e.g., `center`, `flex-start`, `space-between`, `space-around`).</dd>
+		            
+		            <dt><code>align-items</code></dt>
+		            <dd>Aligns items **along the cross axis** (perpendicular to the main axis, e.g., `center`, `flex-start`, `stretch`).</dd>
+		            
+		            <dt><code>order</code></dt>
+		            <dd>A property applied to **flex items** to change their visual order, regardless of their source order in the HTML.</dd>
+		            
+		            <dt><code>flex-grow</code> / <code>flex-shrink</code></dt>
+		            <dd>Properties applied to **flex items** to determine how they absorb extra space (`grow`) or contract when space is limited (`shrink`).</dd>
+		        </dl>
+
+		        <p>Example: Centering items both horizontally and vertically using Flexbox.</p>
+		        <div class="code-block">
+		            <pre><code>
+					.container {
+					    display: flex;
+					    /* Main axis: Center items horizontally */
+					    justify-content: center; 
+					    /* Cross axis: Center items vertically */
+					    align-items: center; 
+					    height: 300px;
+					}
+					.item {
+					    order: 3; /* Visually place this item third */
+					    flex-grow: 1; /* Allow this item to take up available space */
+					}
+		            </code></pre>
+		        </div>
+		    </div>
+		    
+		    <div class="css-grid-layout">
+		        <h3>CSS Grid Layout</h3>
+		        <p>CSS Grid is a **two-dimensional** layout system, meaning it can handle both rows and columns simultaneously. It is the perfect tool for creating the overall page structure or complex component layouts.</p>
+		        
+		        <dl>
+		            <dt>Setting the Container</dt>
+		            <dd>Applying **`display: grid;`** to the parent element defines a grid container.</dd>
+		            
+		            <dt><code>grid-template-columns</code></dt>
+		            <dd>Defines the number and width of the columns (e.g., `1fr 1fr 1fr`, `200px auto`).</dd>
+		            
+		            <dt><code>grid-template-rows</code></dt>
+		            <dd>Defines the number and height of the rows.</dd>
+		            
+		            <dt><code>grid-gap</code> (or <code>gap</code>)</dt>
+		            <dd>Sets the size of the gaps (gutters) between the rows and columns.</dd>
+		            
+		            <dt><code>grid-column-start/end</code></dt>
+		            <dd>Properties applied to **grid items** to explicitly place them, allowing them to span multiple columns.</dd>
+		        </dl>
+
+		        <p>Example: Creating a three-column layout with consistent spacing.</p>
+		        <div class="code-block">
+		            <pre><code>
+					.grid-container {
+					    display: grid;
+					    /* Three equal-width columns (1fr = 1 fractional unit) */
+					    grid-template-columns: 1fr 1fr 1fr; 
+					    /* Gap between cells */
+					    gap: 20px; 
+					}
+					.grid-item-header {
+					    /* Span across all three columns */
+					    grid-column: 1 / span 3; 
+					}
+		            </code></pre>
+		        </div>
+
+		        <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a>
+		    </div>
+		    
+		</section>
+
+		
+		<section id="advanced-tools-and-practices">
+		    
+		    <h2>Advanced Tools, Frameworks, and Professional Practices</h2>
+		    
+		    <p>Beyond writing raw CSS, professional workflows involve tools, frameworks, and techniques that enhance efficiency, maintainability, performance, and cross-browser compatibility.</p>
+		    		    
+		    <div class="css-preprocessors">
+		        <h3>CSS Preprocessors (Sass/LESS)</h3>
+		        <p>Preprocessors extend the capabilities of standard CSS, allowing developers to write more **maintainable and powerful** stylesheets using programming concepts.</p>
+		        
+		        <dl>
+		            <dt>Core Features</dt>
+		            <dd>They introduce features like **variables**, **nesting** of selectors, reusable **mixins**, and **functions**, which are then compiled into standard CSS.</dd>
+		            
+		            <dt>Widely Used Compilers</dt>
+		            <dd>These tools take the preprocessor code (e.g., Sass) and convert it into browser-readable CSS.</dd>
+		        </dl>
+		        
+		        <ul>
+		            <li>**Prepros**: A cross-platform app for compiling various preprocessors.</li>
+		            <li>**Koala**: Another popular GUI application for compiling Sass, Less, and more.</li>
+		        </ul>
+		    </div>
+		    
+		    <div class="css-frameworks">
+		        <h3>CSS Frameworks</h3>
+		        <p>Frameworks provide pre-written, standardized code bases and components that accelerate development by offering readily available layouts, utilities, and widgets.</p>
+		        
+		        <ul>
+		            <li>**Tailwind CSS**: A utility-first framework where styling is applied directly in the HTML using small, single-purpose CSS classes (e.g., `flex`, `pt-4`, `text-center`).</li>
+		            <li>**Bootstrap**: A comprehensive component library that provides pre-designed elements like navigation bars, buttons, and responsive grid systems.</li>
+		        </ul>
+		    </div>
+		    
+		    <div class="design-tools">
+		        <h3>Tools for Design Reference</h3>
+		        <p>Developers often work from digital design files created in industry-standard tools, which define the exact aesthetics and measurements for the CSS implementation.</p>
+		        
+		        <ul>
+		            <li>**Figma**: A popular, collaborative, browser-based interface design tool.</li>
+		            <li>**Adobe XD**: A design and prototyping tool for web and mobile apps.</li>
+		            <li>**Webflow**: A visual development tool that bridges the gap between design and code.</li>
+		        </ul>
+		    </div>
+		    
+		    <div class="cross-browser">
+		        <h3>Cross-Browser Adaptability</h3>
+		        <p>Advanced CSS knowledge includes understanding and addressing **cross-browser issues**. Since not all CSS properties are supported equally across the hundreds of browser versions, developers must verify compatibility.</p>
+		        
+		        <p>The primary reference for checking which properties are supported where is the **MDN Web Docs** (Mozilla Developer Network), which provides detailed compatibility tables.</p>
+		        
+		        <p>Example of a compatibility table reference:</p>
+		        <div class="code-block">
+		            <pre><code>
+		/* Checks compatibility for the :has() pseudo-class */
+		https://developer.mozilla.org/en-US/docs/Web/CSS/:has#browser_compatibility
+		            </code></pre>
+		        </div>
+		    </div>
+		    
+		    
+		    <div class="performance-tools">
+		        <h3>Performance and Development Tools</h3>
+		        <p>These tools are crucial for fast prototyping, debugging, and optimizing the final production code for faster loading times.</p>
+		        
+		        <dl>
+		            <dt>Online Code Playgrounds</dt>
+		            <dd>Platforms like **CodePen** and **JSFiddle** allow quick prototyping and testing of small code snippets in an isolated, shareable environment.</dd>
+		            
+		            <dt>CSS Minify</dt>
+		            <dd>The technique of reducing the CSS file size for better performance by **clearing irrelevant characters** such as white spaces, comments, and line breaks.</dd>
+		            <dd>Tools include preprocessors, build tools, and online services like **CSS Minifier**.</dd>
+		        </dl>
+		    </div>
+		    
+		</section>
+
+		<section id="css-related-job-roles">
+    
+		    <h2>Job Roles Focused on CSS Expertise</h2>
+		    
+		    <p>A deep understanding of CSS is fundamental to several key roles in web development, particularly those focused on the visual layer and user experience.</p>		    
+		    
+		    <div class="job-role-ui">
+		        <h3>UI (User Interface) Developer</h3>
+		        <p>The UI Developer specializes in the visual and interactive components of an application, requiring an extremely high level of CSS and preprocessor expertise.</p>
+		        
+		        <dl>
+		            <dt>Core Expertise</dt>
+		            <dd>Deep knowledge in **CSS**, **Sass/Less**, and advanced concepts like **Flexbox** and **Grid** for layout.</dd>
+		            
+		            <dt>Key Responsibilities</dt>
+		            <dd>Building **reusable UI components** (like buttons, navigation bars, and cards).</dd>
+		            <dd>Implementing complex **animations** and **transitions** for seamless user experiences.</dd>
+		            <dd>Ensuring perfect **responsive design** across all devices.</dd>
+		        </dl>
+		    </div>
+		    
+		    <div class="job-role-frontend">
+		        <h3>Frontend Developer</h3>
+		        <p>The Frontend Developer acts as the bridge between the design team and the final application, ensuring the user interface is functional, interactive, and visually accurate.</p>
+		        
+		        <dl>
+		            <dt>Core Function</dt>
+		            <dd>Translating **UI/UX designer wireframes** (e.g., from Figma or Adobe XD) into **functional, interactive, and pixel-perfect layouts**.</dd>
+		            
+		            <dt>Key Skills</dt>
+		            <dd>Strong proficiency in **HTML** for structure and **advanced CSS** for styling and layout.</dd>
+		            <dd>Integrating styling with JavaScript frameworks (like React or Vue) to handle dynamic content.</dd>
+		        </dl>
+		    </div>
+		    
+		</section>
+
+
+	</div>	
+
+	<a href="#" id="backToTopBtn">↑</a>
+</body>
+</html>

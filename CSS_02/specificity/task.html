@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specificity Challenge - Fixed</title>
+    <style>
+        /* DON'T CHANGE THESE RULES */
+        .page-title { color: blue; }
+        #main-title { color: red; }
+        h1 { color: green; }
+        
+        /* TASK 1: Make the title purple WITHOUT using !important or inline styles */
+        /* Add your solution below */
+        
+        
+        
+        /* TASK 2: Make these buttons have the correct colors */
+        .btn { background: lightgray; }
+        .btn.primary { background: blue;color:white }
+        .btn#submit { background: red; }
+        /* The submit button should be GREEN */
+        
+        
+        /* TASK 3: Fix the navigation states */
+        nav a { color: black; }
+        nav a.active { color: red; }
+        nav a:hover { color: blue; }
+        nav a:visited { color: purple; }
+        /* Hover should work even on visited links */
+        
+        /* TASK 4: Override the inline style */
+        .feature-card { 
+            border: 2px solid black; 
+            padding: 10px;
+        }
+        /* Make the card have a 5px green border without touching HTML */
+    </style>
+</head>
+<body>
+    <h1>Specificity Challenge - Fixed Version</h1>
+    
+    <!-- Task 1 -->
+    <h1 class="page-title" id="main-title">This title should be PURPLE</h1>
+    
+    <!-- Task 2 -->
+    <button class="btn">Normal Button (gray)</button>
+    <button class="btn primary">Primary Button (blue)</button>
+    <button class="btn primary" id="submit">Submit Button (should be GREEN)</button>
+    
+    <!-- Task 3 -->
+    <nav>
+        <a href="#home">Home</a> |
+        <a href="#about" class="active">About (active)</a> |
+        <a href="#visited" style="color: purple">Visited Link</a> |
+        <a href="#hover">Hover Over Me</a>
+    </nav>
+    
+    <!-- Task 4 -->
+    <div class="feature-card" style="border: 1px solid red;">
+        This card should have a 5px green border, overriding the inline style.
+    </div>
+
+    <div style="margin-top: 30px; padding: 15px; background: #f5f5f5;">
+        <h3>Rules:</h3>
+        <ul>
+            <li>Don't modify the existing CSS rules</li>
+            <li>Don't use !important unless absolutely necessary</li>
+            <li>Don't modify the HTML</li>
+        </ul>
+    </div>
+    
+</body>
+</html>
