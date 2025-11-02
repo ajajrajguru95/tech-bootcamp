@@ -1,0 +1,72 @@
+@import 'test';
+
+// Variables 
+// Colors
+$primary-color: rgb(216, 7, 7);
+$secondary-color: rgb(3, 3, 7);
+$card-bg-color: #f9f9f9;
+$card-border-color: #ddd;
+$white: #fff;
+
+
+// Mixins 
+@mixin card-styles{
+    background-color: $card-bg-color;
+    border: 1px solid $card-border-color;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+// Extends 
+.btn{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: $white;
+    cursor: pointer;
+}
+
+
+// Main styles
+//card cosmetic box
+.card{//parent
+     @include card-styles;
+    &:hover{
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    &-header{
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 1rem;
+        border-bottom: 2px solid red;
+    }
+    &-content{
+        // padding: 1rem;
+        font-size: 1rem;
+    }
+    &-footer{
+        // padding: 1rem;
+        font-size: 0.875rem;
+        border-top: 1px solid red;
+    }
+    @media (max-width: 600px) {
+        color: $secondary-color;
+        &-header{
+            font-size: 1.25rem;
+        }
+    }
+    .button{
+        @extend .btn;
+    }
+}//card ending
+
+.blog-card{
+    @include card-styles;
+    .custom-button{
+        @extend .btn;
+    }
+}
+
+

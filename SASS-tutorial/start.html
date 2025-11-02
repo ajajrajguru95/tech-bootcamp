@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Maintenance Nightmare</title>
+    <style>
+        /* THE PROBLEM: Repetition, no variables, deep nesting */
+        
+        /* Colors repeated everywhere */
+        .primary-button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .primary-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .secondary-button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .secondary-button:hover {
+            background-color: #c0392b;
+        }
+        
+        /* Card styles with repetition */
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin: 15px;
+        }
+        
+        .card-header {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .card-content {
+            line-height: 1.6;
+            color: #34495e;
+        }
+        
+        /* Media queries repeated everywhere */
+        @media (max-width: 768px) {
+            .primary-button, .secondary-button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .card {
+                padding: 15px;
+                margin: 10px;
+            }
+        }
+        
+        /* More repetition for dark theme? Good luck maintaining! */
+        .dark-theme .primary-button {
+            background-color: #2980b9;
+        }
+        
+        .dark-theme .secondary-button {
+            background-color: #c0392b;
+        }
+        
+        /* Imagine changing padding across all buttons... */
+    </style>
+</head>
+<body>
+    <h1>The CSS Maintenance Problem</h1>
+    
+    <button class="primary-button">Primary Button</button>
+    <button class="secondary-button">Secondary Button</button>
+    
+    <div class="card">
+        <div class="card-header">Card Title
+            <div class="test"></div>
+        </div>
+        <div class="card-content">
+            This CSS has so much repetition! Changing button padding requires updating multiple places.
+        </div>
+    </div>
+    
+    <div style="margin-top: 30px; padding: 15px; background: #fff3cd;">
+        <h3>Problems with this CSS:</h3>
+        <ul>
+            <li>Colors repeated everywhere</li>
+            <li>Button styles duplicated</li>
+            <li>Media queries repeated</li>
+            <li>No central configuration</li>
+            <li>Hard to maintain themes</li>
+        </ul>
+    </div>
+</body>
+</html>

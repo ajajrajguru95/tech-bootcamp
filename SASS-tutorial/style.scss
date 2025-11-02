@@ -1,0 +1,96 @@
+// SASS SOLUTION: Variables, Mixins, and Organization
+
+// 1. VARIABLES - Centralized configuration
+$primary-color: #3498db;
+$secondary-color: #e74c3c;
+$text-dark: #2c3e50;
+$text-light: #34495e;
+$shadow: 0 2px 10px rgba(0,0,0,0.1);
+$border-radius: 4px;
+$spacing-small: 10px;
+$spacing-medium: 15px;
+$spacing-large: 20px;
+
+// 2. MIXINS - Reusable code blocks
+@mixin button-base {
+    padding: 12px 24px;
+    border: none;
+    border-radius: $border-radius;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    // Nested media query - applies to all buttons
+    @media (max-width: 768px) {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+@mixin card-base {
+    background: white;
+    border-radius: 8px;
+    box-shadow: $shadow;
+    padding: $spacing-large;
+    margin: $spacing-medium;
+    
+    @media (max-width: 768px) {
+        padding: $spacing-medium;
+        margin: $spacing-small;
+    }
+}
+
+// 3. ACTUAL STYLES - Clean and maintainable
+.primary-button {
+    @include button-base;
+    background-color: $primary-color;
+    
+    &:hover {
+        background-color: darken($primary-color, 10%);
+    }
+}
+
+.secondary-button {
+    @include button-base;
+    background-color: $secondary-color;
+    
+    &:hover {
+        background-color: darken($secondary-color, 10%);
+    }
+}
+
+.card {
+    @include card-base;
+    
+    .card-header {
+        font-size: 1.5rem;
+        margin-bottom: $spacing-medium;
+        color: $text-dark;
+    }
+    
+    .card-content {
+        line-height: 1.6;
+        color: $text-light;
+    }
+}
+
+// 4. THEMING - Easy to maintain
+.dark-theme {
+    .primary-button {
+        background-color: darken($primary-color, 20%);
+    }
+    
+    .secondary-button {
+        background-color: darken($secondary-color, 20%);
+    }
+}
+
+// 5. FUNCTIONS - Dynamic values
+@function calculate-rem($px) {
+    @return ($px / 16) * 1rem;
+}
+
+.typography {
+    font-size: calculate-rem(18px); // Converts to 1.125rem
+}
