@@ -1,0 +1,242 @@
+<?php
+/**
+ * Template Name: WooCommerce Exercise Guide
+ */
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Your First Online Store - Exercise</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px;
+            background: #f8f9fa;
+        }
+        .exercise {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .task {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #7f54b3;
+        }
+        .product-example {
+            background: #e8f5e8;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .testing-guide {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        .step-number {
+            background: #7f54b3;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="exercise">
+        <h1>🛍️ Build Your First Online Store - Hands-On Exercise</h1>
+        <p>Follow these steps to create a complete demo store selling tech products.</p>
+
+        <div class="task">
+            <h3><span class="step-number">1</span> Add Your First Products</h3>
+            <p>Go to <strong>Products → Add New</strong> and create these demo products:</p>
+            
+            <div class="product-example">
+                <h4>📱 Product 1: Wireless Bluetooth Headphones</h4>
+                <ul>
+                    <li><strong>Product Name:</strong> Premium Wireless Headphones</li>
+                    <li><strong>Regular Price:</strong> $99.99</li>
+                    <li><strong>Sale Price:</strong> $79.99</li>
+                    <li><strong>Description:</strong> High-quality wireless headphones with noise cancellation</li>
+                    <li><strong>Short Description:</strong> Experience crystal-clear audio</li>
+                    <li><strong>Product Image:</strong> Use any headphone image (can download from Unsplash)</li>
+                    <li><strong>Inventory:</strong> SKU: HEAD-001, Stock: 50</li>
+                </ul>
+            </div>
+
+            <div class="product-example">
+                <h4>💻 Product 2: Laptop Stand</h4>
+                <ul>
+                    <li><strong>Product Name:</strong> Aluminum Laptop Stand</li>
+                    <li><strong>Regular Price:</strong> $49.99</li>
+                    <li><strong>Description:</strong> Ergonomic laptop stand for better posture</li>
+                    <li><strong>Product Image:</strong> Use any laptop stand image</li>
+                    <li><strong>Inventory:</strong> SKU: STAND-001, Stock: 25</li>
+                </ul>
+            </div>
+
+            <div class="product-example">
+                <h4>🖱️ Product 3: Wireless Mouse (with Variations)</h4>
+                <p>This one will have color options!</p>
+                <ul>
+                    <li><strong>Product Name:</strong> Ergonomic Wireless Mouse</li>
+                    <li><strong>Price:</strong> $29.99</li>
+                    <li><strong>Product Data:</strong> Select "Variable product"</li>
+                    <li><strong>Attributes:</strong> 
+                        <ul>
+                            <li>Color: Black, White, Blue</li>
+                        </ul>
+                    </li>
+                    <li><strong>Variations:</strong> Create variations for each color</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3><span class="step-number">2</span> Configure Store Settings</h3>
+            
+            <h4>💰 Currency & Location</h4>
+            <p>Go to <strong>WooCommerce → Settings → General</strong></p>
+            <ul>
+                <li><strong>Currency:</strong> US Dollar (USD)</li>
+                <li><strong>Currency Position:</strong> $99.99 (left with space)</li>
+                <li><strong>Thousand Separator:</strong> , (comma)</li>
+                <li><strong>Decimal Separator:</strong> . (period)</li>
+            </ul>
+
+            <h4>🚚 Shipping Setup</h4>
+            <p>Go to <strong>WooCommerce → Settings → Shipping</strong></p>
+            <ul>
+                <li><strong>Shipping Zone 1:</strong> United States</li>
+                <li><strong>Shipping Method:</strong> Flat Rate - $5.00</li>
+                <li><strong>Shipping Zone 2:</strong> Rest of the World</li>
+                <li><strong>Shipping Method:</strong> Flat Rate - $15.00</li>
+            </ul>
+        </div>
+
+        <div class="task">
+            <h3><span class="step-number">3</span> Configure Payments</h3>
+            <p>Go to <strong>WooCommerce → Settings → Payments</strong></p>
+            
+            <h4>For Testing (Enable these):</h4>
+            <ul>
+                <li><strong>Cash on delivery</strong> - Customers pay when they receive products</li>
+                <li><strong>Bank transfer</strong> - Customers transfer money directly</li>
+            </ul>
+
+            <h4>For Real Stores (Research these later):</h4>
+            <ul>
+                <li><strong>Stripe</strong> - Credit card payments</li>
+                <li><strong>PayPal</strong> - PayPal payments</li>
+            </ul>
+        </div>
+
+        <div class="task">
+            <h3><span class="step-number">4</span> Store Appearance</h3>
+            
+            <h4>🛒 Shop Page Setup</h4>
+            <p>Go to <strong>WooCommerce → Settings → Products</strong></p>
+            <ul>
+                <li><strong>Shop Page:</strong> Select your shop page</li>
+                <li><strong>Add to Cart Behavior:</strong> "Redirect to cart page"</li>
+                <li><strong>Product Images:</strong> Set catalog image sizes</li>
+            </ul>
+
+            <h4>🎨 Store Styling</h4>
+            <p>Go to <strong>Appearance → Customize → WooCommerce</strong></p>
+            <ul>
+                <li><strong>Product Catalog:</strong> Choose how products display</li>
+                <li><strong>Product Images:</strong> Set image sizes</li>
+                <li><strong>Checkout:</strong> Customize checkout appearance</li>
+            </ul>
+        </div>
+
+        <div class="testing-guide">
+            <h3>🧪 Test Your Store - Complete Customer Journey</h3>
+            <p><strong>Act like a customer and test the entire process:</strong></p>
+            
+            <h4>1. Browse Products</h4>
+            <ul>
+                <li>Visit your shop page</li>
+                <li>Click on products to see details</li>
+                <li>Test the variable product (mouse with colors)</li>
+            </ul>
+
+            <h4>2. Add to Cart</h4>
+            <ul>
+                <li>Add multiple products to cart</li>
+                <li>Check cart page - verify items and quantities</li>
+                <li>Test updating quantities in cart</li>
+            </ul>
+
+            <h4>3. Checkout Process</h4>
+            <ul>
+                <li>Proceed to checkout</li>
+                <li>Fill in dummy customer information</li>
+                <li>Select payment method (use Cash on delivery)</li>
+                <li>Place order</li>
+            </ul>
+
+            <h4>4. Admin Order Management</h4>
+            <ul>
+                <li>Go to <strong>WooCommerce → Orders</strong></li>
+                <li>See the new order you just created</li>
+                <li>Change order status from "Processing" to "Completed"</li>
+            </ul>
+        </div>
+
+        <div class="task">
+            <h3><span class="step-number">5</span> Advanced Features (Bonus)</h3>
+            
+            <h4>📧 Email Testing</h4>
+            <p>Go to <strong>WooCommerce → Settings → Emails</strong></p>
+            <ul>
+                <li>Check email templates</li>
+                <li>Send test emails to yourself</li>
+            </ul>
+
+            <h4>📊 Reports & Analytics</h4>
+            <p>Go to <strong>WooCommerce → Analytics</strong></p>
+            <ul>
+                <li>View sales reports</li>
+                <li>Check customer analytics</li>
+                <li>See product performance</li>
+            </ul>
+
+            <h4>🎯 Marketing Features</h4>
+            <p>Go to <strong>Marketing → Coupons</strong></p>
+            <ul>
+                <li>Create a 10% discount coupon: "WELCOME10"</li>
+                <li>Test it during checkout</li>
+            </ul>
+        </div>
+
+        <div style="background: #e8f5e8; padding: 25px; border-radius: 8px; margin-top: 30px;">
+            <h3>🎉 Congratulations! You Built an E-Commerce Store!</h3>
+            <p><strong>What you've accomplished in just one session:</strong></p>
+            <ul>
+                <li>✅ Installed and configured WooCommerce</li>
+                <li>✅ Added multiple product types</li>
+                <li>✅ Set up payment and shipping methods</li>
+                <li>✅ Tested complete customer journey</li>
+                <li>✅ Managed orders from admin</li>
+                <li>✅ Created a fully functional online store!</li>
+            </ul>
+            <p><strong>Next Steps:</strong> Explore themes, plugins, and advanced features like subscriptions, memberships, and international selling.</p>
+        </div>
+    </div>
+</body>
+</html>

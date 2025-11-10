@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WooCommerce Setup Guide</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background: #f8f9fa;
+        }
+        .setup-guide {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .step {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #7f54b3;
+        }
+        .screenshot {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .warning {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .success {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .config-option {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>⚙️ WooCommerce Setup Guide</h1>
+
+    <div class="setup-guide">
+        <h2>Step 1: Install WooCommerce Plugin</h2>
+        
+        <div class="step">
+            <h3>From Your WordPress Dashboard:</h3>
+            <ol>
+                <li>Go to <strong>Plugins → Add New</strong></li>
+                <li>Search for "WooCommerce"</li>
+                <li>Click <strong>"Install Now"</strong></li>
+                <li>After installation, click <strong>"Activate"</strong></li>
+            </ol>
+            
+            <div class="warning">
+                <strong>💡 Pro Tip:</strong> Make sure you're using a WooCommerce-compatible theme like:
+                <ul>
+                    <li>Storefront (Official WooCommerce theme)</li>
+                    <li>Astra</li>
+                    <li>OceanWP</li>
+                    <li>GeneratePress</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Step 2: Run the Setup Wizard</h2>
+        
+        <div class="step">
+            <p>After activation, you'll see the WooCommerce setup wizard. This guides you through essential store configuration.</p>
+            
+            <div class="config-option">
+                <h4>📍 Store Address</h4>
+                <p>Enter your business location - this affects taxes and shipping calculations.</p>
+                <ul>
+                    <li><strong>Country/Region:</strong> Your business location</li>
+                    <li><strong>City:</strong> Your city</li>
+                </ul>
+            </div>
+
+            <div class="config-option">
+                <h4>🏪 Industry/Business Type</h4>
+                <p>Tell WooCommerce what you sell - it will suggest relevant features.</p>
+                <ul>
+                    <li>Fashion, Apparel & Accessories</li>
+                    <li>Food & Drink</li>
+                    <li>Electronics & Computers</li>
+                    <li>Other (we'll use this for our demo)</li>
+                </ul>
+            </div>
+
+            <div class="config-option">
+                <h4>📦 Product Types</h4>
+                <p>What kind of products will you sell?</p>
+                <ul>
+                    <li><strong>Physical products</strong> - Shipped to customers</li>
+                    <li><strong>Digital products</strong> - Downloaded by customers</li>
+                    <li><strong>Both</strong> - Mix of physical and digital</li>
+                </ul>
+            </div>
+
+            <div class="config-option">
+                <h4>💳 Payment Methods</h4>
+                <p>How will you accept payments?</p>
+                <ul>
+                    <li><strong>Stripe</strong> - Credit card payments</li>
+                    <li><strong>PayPal</strong> - PayPal payments</li>
+                    <li><strong>Cash on delivery</strong> - Pay when delivered</li>
+                    <li><strong>Bank transfer</strong> - Direct bank payments</li>
+                </ul>
+                <p><strong>For testing:</strong> Enable "Cash on delivery" and "Bank transfer"</p>
+            </div>
+
+            <div class="config-option">
+                <h4>🚚 Shipping Setup</h4>
+                <p>Configure how you'll ship products:</p>
+                <ul>
+                    <li><strong>Shipping zones</strong> - Where you ship to</li>
+                    <li><strong>Shipping methods</strong> - Flat rate, free shipping, etc.</li>
+                </ul>
+            </div>
+
+            <div class="config-option">
+                <h4>🎨 Recommended Plugins</h4>
+                <p>The wizard may suggest additional plugins:</p>
+                <ul>
+                    <li><strong>MailPoet</strong> - Email marketing</li>
+                    <li><strong>Google Listings & Ads</strong> - Sell on Google</li>
+                    <li><strong>Pinterest for WooCommerce</strong> - Social commerce</li>
+                </ul>
+                <p><strong>For now:</strong> Skip these to keep it simple</p>
+            </div>
+        </div>
+
+        <div class="success">
+            <h3>✅ Setup Complete!</h3>
+            <p>After completing the wizard, you'll have:</p>
+            <ul>
+                <li>A fully functional online store</li>
+                <li>Shop pages automatically created</li>
+                <li>Basic payment methods configured</li>
+                <li>Shipping settings ready</li>
+                <li>Sample products (optional)</li>
+            </ul>
+        </div>
+
+        <div class="warning">
+            <h3>🔧 Important: Check Your Pages</h3>
+            <p>After setup, go to <strong>Pages → All Pages</strong> and verify these were created:</p>
+            <ul>
+                <li><strong>Shop</strong> - Main products page</li>
+                <li><strong>Cart</strong> - Shopping cart</li>
+                <li><strong>Checkout</strong> - Checkout process</li>
+                <li><strong>My Account</strong> - Customer accounts</li>
+            </ul>
+            <p>If any are missing, go to <strong>WooCommerce → Status → Tools</strong> and click "Create pages"</p>
+        </div>
+    </div>
+</body>
+</html>
